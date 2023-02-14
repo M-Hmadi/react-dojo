@@ -101,3 +101,22 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.back-to-homepage-link  {
+  text-decoration: none;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.back-to-homepage {
+  margin-top: 8px;
+}
+
+.not-found {
+  display: grid;
+  gap: 10px;
+}

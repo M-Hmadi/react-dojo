@@ -6,7 +6,7 @@ const useFetch = (url, immediate, blog = null) => {
   const [error, setError] = useState(null);
 
   const executeFetch = useCallback(
-    (blog = null) => {
+    (blog = null, method) => {
       setIsPending(true);
       const requestInit = blog
         ? {
@@ -14,6 +14,8 @@ const useFetch = (url, immediate, blog = null) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog),
           }
+        : method === "DELETE"
+        ? { method: method }
         : null;
       // set timeout is added to mimic a delay
       setTimeout(() => {
@@ -40,7 +42,7 @@ const useFetch = (url, immediate, blog = null) => {
 
   useEffect(() => {
     if (immediate) {
-      executeFetch(blog);
+      executeFetch();
     }
   }, [blog, executeFetch, immediate]);
 

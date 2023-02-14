@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const useFetch = (url, blog = null, immediate) => {
+const useFetch = (url, immediate, blog = null) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
